@@ -1,0 +1,1393 @@
+
+/* ========================================
+   INSTITUTO ABEPOLI
+   ESTILO DA PÁGINA SAIBA MAIS
+   Referência: preto, amarelo e bege
+======================================== */
+
+
+/* ========================================
+   VARIÁVEIS E RESET
+======================================== */
+
+:root {
+    --amarelo: #ffc931;
+    --amarelo-escuro: #f5ab00;
+    --preto: #111111;
+    --preto-suave: #1b1b1b;
+    --bege: #f8efd9;
+    --bege-claro: #fff8e9;
+    --texto: #191919;
+    --texto-claro: #eeeeee;
+    --cinza: #77716a;
+    --borda: rgba(0, 0, 0, 0.12);
+    --transicao: 0.3s ease;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--bege);
+    color: var(--texto);
+    font-family: "Poppins", sans-serif;
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    width: min(1180px, 92%);
+    margin: 0 auto;
+}
+
+::selection {
+    background: var(--amarelo);
+    color: var(--preto);
+}
+
+
+/* ========================================
+   CABEÇALHO PRETO
+======================================== */
+
+.navbar {
+    position: relative;
+    z-index: 1000;
+    width: 100%;
+    background: var(--preto);
+    border-bottom: 1px solid rgba(255, 201, 49, 0.2);
+    box-shadow: none;
+}
+
+.nav-container {
+    min-height: 86px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #ffffff;
+    flex-shrink: 0;
+}
+
+.logo:hover {
+    color: var(--amarelo);
+}
+
+.navbar .logo-icon {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    border-radius: 12px;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-title {
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 800;
+    line-height: 1.3;
+}
+
+.logo-subtitle {
+    margin-top: 3px;
+    color: #d0c8b7;
+    font-size: 0.49rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    line-height: 1.5;
+}
+
+
+/* MENU DE NAVEGAÇÃO */
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-link {
+    position: relative;
+    color: #eeeeee;
+    font-size: 0.82rem;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: color var(--transicao);
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -9px;
+    width: 0;
+    height: 2px;
+    background: var(--amarelo);
+    transition: width var(--transicao);
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--amarelo);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+
+/* BOTÃO DO MENU MOBILE */
+
+.menu-toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 43px;
+    height: 43px;
+    border: 1px solid rgba(255, 201, 49, 0.4);
+    border-radius: 10px;
+    background: transparent;
+    color: var(--amarelo);
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+
+/* ========================================
+   BANNER PRINCIPAL
+======================================== */
+
+.hero-info {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 510px;
+    padding: 75px 0;
+    text-align: left;
+    color: #ffffff;
+
+    background-color: var(--preto);
+
+    background-image:
+        linear-gradient(
+            90deg,
+            #111111 0%,
+            #111111 34%,
+            rgba(17, 17, 17, 0.96) 43%,
+            rgba(17, 17, 17, 0.65) 57%,
+            rgba(17, 17, 17, 0.08) 100%
+        ),
+        url("../images/abelha2.jpg");
+
+    background-position: center, right center;
+    background-size: cover, cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.hero-info::before {
+    content: "";
+    position: absolute;
+    top: 35px;
+    right: 5%;
+    width: 95px;
+    height: 95px;
+    border-top: 1px solid rgba(255, 201, 49, 0.65);
+    border-right: 1px solid rgba(255, 201, 49, 0.65);
+    transform: rotate(30deg);
+    pointer-events: none;
+}
+
+.hero-info::after {
+    content: "";
+    position: absolute;
+    right: 7%;
+    bottom: 50px;
+    width: 55px;
+    height: 55px;
+    border: 1px solid rgba(255, 201, 49, 0.45);
+    transform: rotate(30deg);
+    pointer-events: none;
+}
+
+.hero-info-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    text-align: left;
+    animation: aparecer 0.7s ease both;
+}
+
+.hero-info .tag {
+    display: inline-block;
+    margin: 0 0 20px;
+    padding: 0;
+    background: transparent;
+    color: var(--amarelo);
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.hero-info h1 {
+    max-width: 560px;
+    margin: 0 0 22px;
+    color: #ffffff;
+    font-size: clamp(2.7rem, 5.2vw, 4.7rem);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -1.8px;
+}
+
+.hero-info h1 span {
+    color: var(--amarelo);
+}
+
+.hero-info p {
+    max-width: 520px;
+    margin: 0;
+    color: #e6e0d6;
+    font-size: 0.94rem;
+    line-height: 1.85;
+}
+
+
+/* ========================================
+   ESTILO GERAL DAS SEÇÕES
+======================================== */
+
+.section {
+    position: relative;
+    padding: 85px 0;
+    background: var(--bege);
+}
+
+.section-title {
+    max-width: 760px;
+    margin: 0 auto 45px;
+    text-align: center;
+}
+
+.section-title .tag {
+    display: inline-block;
+    margin: 0 0 13px;
+    padding: 0;
+    background: transparent;
+    color: #8c6716;
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.section-title h2 {
+    margin: 0 0 16px;
+    color: var(--preto);
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.8px;
+}
+
+.section-title h2::after {
+    content: "";
+    display: block;
+    width: 42px;
+    height: 3px;
+    margin: 17px auto 0;
+    background: var(--amarelo);
+    border-radius: 2px;
+}
+
+.section-title p {
+    max-width: 680px;
+    margin: 0 auto;
+    color: #655e53;
+    font-size: 0.91rem;
+}
+
+
+/* ========================================
+   CARTÕES DE ABELHAS
+======================================== */
+
+.bee-types {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.bee-card {
+    overflow: hidden;
+    background: var(--preto-suave);
+    border: 1px solid rgba(255, 201, 49, 0.2);
+    border-radius: 12px;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+    transition:
+        transform var(--transicao),
+        border-color var(--transicao),
+        box-shadow var(--transicao);
+}
+
+.bee-card:hover {
+    transform: translateY(-7px);
+    border-color: rgba(255, 201, 49, 0.75);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.bee-card-image {
+    height: 225px;
+    overflow: hidden;
+    background: #29251c;
+}
+
+.bee-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.bee-card:hover .bee-card-image img {
+    transform: scale(1.05);
+}
+
+.bee-card-content {
+    padding: 25px;
+    color: #ffffff;
+}
+
+.bee-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    margin-bottom: 14px;
+    background: var(--amarelo);
+    color: var(--preto);
+    border-radius: 50%;
+    font-size: 0.76rem;
+    font-weight: 800;
+}
+
+.bee-card h3 {
+    margin: 0 0 12px;
+    color: #ffffff;
+    font-size: 1.1rem;
+    line-height: 1.4;
+}
+
+.bee-card p {
+    margin: 0;
+    color: #c9c4bb;
+    font-size: 0.84rem;
+    line-height: 1.8;
+}
+
+
+/* ========================================
+   SEÇÃO PRESERVAÇÃO
+======================================== */
+
+.preservation {
+    background: var(--preto);
+    color: #ffffff;
+}
+
+.preservation-content {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: 65px;
+}
+
+.preservation-text .tag {
+    display: inline-block;
+    margin: 0 0 15px;
+    padding: 0;
+    background: transparent;
+    color: var(--amarelo);
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 0.73rem;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+}
+
+.preservation-text h2 {
+    margin: 0 0 22px;
+    color: #ffffff;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.15;
+    font-weight: 800;
+}
+
+.preservation-text p {
+    margin: 0 0 16px;
+    color: #c9c4bb;
+    font-size: 0.91rem;
+    line-height: 1.9;
+}
+
+.preservation-highlight {
+    position: relative;
+    padding: 38px;
+    overflow: hidden;
+    background: #242424;
+    border: 1px solid rgba(255, 201, 49, 0.3);
+    border-radius: 16px;
+    box-shadow: none;
+    transition: transform var(--transicao);
+}
+
+.preservation-highlight::before {
+    content: "";
+    position: absolute;
+    top: -55px;
+    right: -55px;
+    width: 140px;
+    height: 140px;
+    background: rgba(255, 201, 49, 0.08);
+    border: 1px solid rgba(255, 201, 49, 0.25);
+    transform: rotate(30deg);
+}
+
+.preservation-highlight:hover {
+    transform: translateY(-5px);
+}
+
+.highlight-icon {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 55px;
+    margin-bottom: 22px;
+    background: var(--amarelo);
+    color: var(--preto);
+    border-radius: 12px;
+    font-size: 1.35rem;
+}
+
+.preservation-highlight h3 {
+    position: relative;
+    z-index: 1;
+    margin: 0 0 12px;
+    color: #ffffff;
+    font-size: 1.25rem;
+}
+
+.preservation-highlight p {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    color: #c9c4bb;
+    font-size: 0.88rem;
+    line-height: 1.8;
+}
+
+
+/* ========================================
+   CARTÕES DE IMPORTÂNCIA
+======================================== */
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.info-card {
+    padding: 28px 23px;
+    background: var(--bege-claro);
+    border: 1px solid rgba(80, 60, 20, 0.13);
+    border-radius: 12px;
+    box-shadow: none;
+    transition:
+        transform var(--transicao),
+        border-color var(--transicao),
+        background var(--transicao);
+}
+
+.info-card:hover {
+    transform: translateY(-6px);
+    background: #ffffff;
+    border-color: var(--amarelo-escuro);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.06);
+}
+
+.info-card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 20px;
+    background: var(--amarelo);
+    color: var(--preto);
+    border-radius: 12px;
+    font-size: 1.2rem;
+    transition: background var(--transicao);
+}
+
+.info-card:hover .info-card-icon {
+    background: var(--preto);
+    color: var(--amarelo);
+    transform: none;
+}
+
+.info-card h3 {
+    margin: 0 0 10px;
+    color: var(--preto);
+    font-size: 1.05rem;
+}
+
+.info-card p {
+    margin: 0;
+    color: #6d665c;
+    font-size: 0.84rem;
+    line-height: 1.8;
+}
+
+
+/* ========================================
+   SEÇÃO MELIPONICULTURA
+======================================== */
+
+.apiculture {
+    background: #eee2c8;
+}
+
+.apiculture-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 60px;
+}
+
+.apiculture-text .tag {
+    display: inline-block;
+    margin: 0 0 15px;
+    padding: 0;
+    background: transparent;
+    color: #8c6716;
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 0.73rem;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+}
+
+.apiculture-text h2 {
+    margin: 0 0 22px;
+    color: var(--preto);
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.15;
+    font-weight: 800;
+}
+
+.apiculture-text p {
+    margin: 0 0 16px;
+    color: #655e53;
+    font-size: 0.91rem;
+    line-height: 1.9;
+}
+
+.apiculture-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.apiculture-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 17px;
+    padding: 20px;
+    background: var(--bege-claro);
+    border: 1px solid rgba(80, 60, 20, 0.12);
+    border-radius: 12px;
+    box-shadow: none;
+    transition:
+        transform var(--transicao),
+        border-color var(--transicao);
+}
+
+.apiculture-item:hover {
+    transform: translateX(5px);
+    border-color: var(--amarelo-escuro);
+    box-shadow: none;
+}
+
+.apiculture-item > i {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 43px;
+    height: 43px;
+    background: var(--amarelo);
+    color: var(--preto);
+    border-radius: 10px;
+    font-size: 1rem;
+}
+
+.apiculture-item h3 {
+    margin: 0 0 5px;
+    color: var(--preto);
+    font-size: 1rem;
+}
+
+.apiculture-item p {
+    margin: 0;
+    color: #655e53;
+    font-size: 0.83rem;
+    line-height: 1.75;
+}
+
+
+/* ========================================
+   SEÇÃO COLMEIAS
+======================================== */
+
+.hive {
+    background: var(--bege);
+}
+
+.hive-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.hive-content {
+    padding: 35px;
+    background: var(--bege-claro);
+    border: 1px solid rgba(80, 60, 20, 0.13);
+    border-radius: 14px;
+    box-shadow: none;
+}
+
+.hive-content h3 {
+    margin: 0 0 18px;
+    color: var(--preto);
+    font-size: 1.3rem;
+}
+
+.hive-content p {
+    margin: 0 0 15px;
+    color: #655e53;
+    font-size: 0.89rem;
+    line-height: 1.8;
+}
+
+.hive-content ul {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 25px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.hive-content li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--preto);
+    font-size: 0.88rem;
+    font-weight: 500;
+}
+
+.hive-content li i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 25px;
+    height: 25px;
+    background: var(--amarelo);
+    color: var(--preto);
+    border-radius: 50%;
+    font-size: 0.7rem;
+}
+
+.hive-visual {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 350px;
+    padding: 40px;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(255, 201, 49, 0.16),
+            transparent 35%
+        ),
+        var(--preto);
+    color: #ffffff;
+    border: 1px solid rgba(255, 201, 49, 0.35);
+    border-radius: 14px;
+    text-align: center;
+    box-shadow: none;
+}
+
+.hive-visual::before,
+.hive-visual::after {
+    content: "";
+    position: absolute;
+    width: 85px;
+    height: 85px;
+    border: 1px solid rgba(255, 201, 49, 0.45);
+    transform: rotate(30deg);
+}
+
+.hive-visual::before {
+    top: 25px;
+    left: 25px;
+}
+
+.hive-visual::after {
+    right: 25px;
+    bottom: 25px;
+}
+
+.hive-icon {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 75px;
+    height: 75px;
+    margin-bottom: 24px;
+    background: var(--amarelo);
+    color: var(--preto);
+    border-radius: 16px;
+    font-size: 1.8rem;
+    box-shadow: none;
+}
+
+.hive-visual span {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 10px;
+    color: var(--amarelo);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.hive-visual strong {
+    position: relative;
+    z-index: 1;
+    color: #ffffff;
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    line-height: 1.2;
+    letter-spacing: 0.3px;
+}
+
+
+/* ========================================
+   CHAMADA FINAL
+======================================== */
+
+.final-section {
+    position: relative;
+    padding: 75px 0;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            circle at 90% 50%,
+            rgba(255, 201, 49, 0.13),
+            transparent 28%
+        ),
+        var(--preto);
+    color: #ffffff;
+    text-align: center;
+}
+
+.final-section::before,
+.final-section::after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border: 1px solid rgba(255, 201, 49, 0.28);
+    transform: rotate(30deg);
+    pointer-events: none;
+}
+
+.final-section::before {
+    top: 20px;
+    left: 5%;
+}
+
+.final-section::after {
+    right: 7%;
+    bottom: -45px;
+}
+
+.final-content {
+    position: relative;
+    z-index: 1;
+    max-width: 780px;
+    margin: 0 auto;
+}
+
+.final-content .tag {
+    display: inline-block;
+    margin: 0 0 12px;
+    padding: 0;
+    background: transparent;
+    color: var(--amarelo);
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 1.6px;
+}
+
+.final-content h2 {
+    margin: 0 0 18px;
+    color: #ffffff;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.15;
+    font-weight: 800;
+}
+
+.final-content p {
+    max-width: 620px;
+    margin: 0 auto 27px;
+    color: #d0c8b7;
+    font-size: 0.91rem;
+}
+
+
+/* BOTÃO DA CHAMADA FINAL */
+
+.final-content > a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 13px 25px;
+    background: var(--amarelo);
+    color: var(--preto);
+    border: 1px solid var(--amarelo);
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    transition:
+        background var(--transicao),
+        color var(--transicao),
+        transform var(--transicao);
+}
+
+.final-content > a:hover {
+    background: transparent;
+    color: var(--amarelo);
+    transform: translateY(-3px);
+}
+
+
+/* ========================================
+   RODAPÉ BEGE
+======================================== */
+
+.footer {
+    position: relative;
+    padding: 55px 0 22px;
+    overflow: hidden;
+    background: var(--bege);
+    color: var(--preto);
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.footer::before {
+    content: none;
+}
+
+.footer-content {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 45px;
+}
+
+.footer-brand .logo {
+    margin-bottom: 17px;
+    color: var(--preto);
+}
+
+.footer-brand .logo-title {
+    color: var(--preto);
+}
+
+.footer-brand .logo-subtitle {
+    color: #6e5a32;
+}
+
+.footer-brand p {
+    max-width: 350px;
+    margin: 0;
+    color: #655e53;
+    font-size: 0.84rem;
+    line-height: 1.8;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 9px;
+}
+
+.footer-links h3,
+.footer-social h3 {
+    margin: 0 0 10px;
+    color: var(--preto);
+    font-size: 0.96rem;
+    font-weight: 700;
+}
+
+.footer-links a {
+    color: #655e53;
+    font-size: 0.83rem;
+    transition: color var(--transicao);
+}
+
+.footer-links a:hover {
+    color: #9b6d00;
+}
+
+.footer-social {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.social-links {
+    display: flex;
+    gap: 11px;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 201, 49, 0.45);
+    color: var(--preto);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 50%;
+    transition:
+        background var(--transicao),
+        color var(--transicao),
+        transform var(--transicao);
+}
+
+.social-links a:hover {
+    background: var(--preto);
+    color: var(--amarelo);
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    position: relative;
+    z-index: 1;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.14);
+    text-align: center;
+}
+
+.footer-bottom p {
+    margin: 0;
+    color: #655e53;
+    font-size: 0.76rem;
+}
+
+
+/* ========================================
+   ANIMAÇÃO
+======================================== */
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ========================================
+   TABLETS
+======================================== */
+
+@media (max-width: 1050px) {
+
+    .nav-menu {
+        gap: 16px;
+    }
+
+    .nav-link {
+        font-size: 0.76rem;
+    }
+
+    .logo-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .logo-title {
+        font-size: 0.83rem;
+    }
+
+    .logo-subtitle {
+        font-size: 0.43rem;
+    }
+
+    .bee-types {
+        gap: 16px;
+    }
+
+    .bee-card-content {
+        padding: 20px;
+    }
+
+    .cards-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .preservation-content,
+    .apiculture-content {
+        gap: 35px;
+    }
+}
+
+
+/* ========================================
+   MENU MOBILE E TELAS MÉDIAS
+======================================== */
+
+@media (max-width: 900px) {
+
+    .nav-container {
+        min-height: 74px;
+    }
+
+    .menu-toggle {
+        display: flex;
+        flex-shrink: 0;
+    }
+
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 25px 5%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        background: var(--preto);
+        border-top: 1px solid rgba(255, 201, 49, 0.2);
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav-menu.active {
+        display: flex;
+        animation: aparecer 0.25s ease both;
+    }
+
+    .nav-link {
+        font-size: 0.9rem;
+    }
+
+    .nav-link::after {
+        bottom: -5px;
+    }
+
+    .hero-info {
+        min-height: 450px;
+        padding: 70px 0;
+        background-position: center, 60% center;
+    }
+
+    .hero-info h1 {
+        max-width: 480px;
+        font-size: clamp(2.6rem, 6vw, 3.8rem);
+    }
+
+    .hero-info p {
+        max-width: 460px;
+    }
+
+    .preservation-content,
+    .apiculture-content {
+        grid-template-columns: 1fr;
+    }
+
+    .preservation-highlight {
+        max-width: 600px;
+    }
+
+    .hive-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hive-visual {
+        min-height: 300px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 35px;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+}
+
+
+/* ========================================
+   CELULARES
+======================================== */
+
+@media (max-width: 650px) {
+
+    .container {
+        width: 90%;
+    }
+
+    .nav-container {
+        gap: 12px;
+    }
+
+    .logo {
+        gap: 9px;
+    }
+
+    .logo-icon {
+        width: 45px;
+        height: 45px;
+    }
+
+    .logo-title {
+        font-size: 0.76rem;
+    }
+
+    .logo-subtitle {
+        max-width: 190px;
+        font-size: 0.39rem;
+        letter-spacing: 0.2px;
+    }
+
+    .hero-info {
+        min-height: 490px;
+        padding: 65px 0;
+        background-image:
+            linear-gradient(
+                90deg,
+                rgba(17, 17, 17, 0.94),
+                rgba(17, 17, 17, 0.78)
+            ),
+            url("../images/polinização1.jpeg");
+        background-position: center, center;
+    }
+
+    .hero-info::before {
+        width: 60px;
+        height: 60px;
+        top: 20px;
+        right: 7%;
+    }
+
+    .hero-info h1 {
+        max-width: 100%;
+        font-size: clamp(2.35rem, 10vw, 3.2rem);
+        letter-spacing: -1px;
+    }
+
+    .hero-info p {
+        max-width: 100%;
+        font-size: 0.87rem;
+    }
+
+    .section {
+        padding: 65px 0;
+    }
+
+    .section-title {
+        margin-bottom: 32px;
+    }
+
+    .section-title h2 {
+        font-size: 2rem;
+    }
+
+    .section-title p {
+        font-size: 0.86rem;
+    }
+
+    .bee-types {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .bee-card-image {
+        height: 240px;
+    }
+
+    .bee-card-content {
+        padding: 23px;
+    }
+
+    .preservation-content,
+    .apiculture-content {
+        gap: 28px;
+    }
+
+    .preservation-text h2,
+    .apiculture-text h2 {
+        font-size: 2.1rem;
+    }
+
+    .preservation-highlight {
+        padding: 28px;
+    }
+
+    .cards-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .info-card {
+        padding: 25px;
+    }
+
+    .apiculture-item {
+        padding: 17px;
+    }
+
+    .hive-content {
+        padding: 25px;
+    }
+
+    .hive-visual {
+        min-height: 270px;
+        padding: 30px 20px;
+    }
+
+    .final-section {
+        padding: 65px 0;
+    }
+
+    .final-content h2 {
+        font-size: 2.15rem;
+    }
+
+    .final-content p {
+        font-size: 0.87rem;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .footer-brand {
+        grid-column: auto;
+    }
+
+    .footer {
+        padding-top: 40px;
+    }
+}
+
+
+/* ========================================
+   CELULARES PEQUENOS
+======================================== */
+
+@media (max-width: 400px) {
+
+    .logo-icon {
+        width: 38px;
+        height: 38px;
+    }
+
+    .logo-title {
+        font-size: 0.69rem;
+    }
+
+    .logo-subtitle {
+        font-size: 0.34rem;
+    }
+
+    .hero-info h1 {
+        font-size: 2.25rem;
+    }
+
+    .section-title h2 {
+        font-size: 1.75rem;
+    }
+
+    .bee-card-image {
+        height: 210px;
+    }
+
+    .hive-content {
+        padding: 22px;
+    }
+
+    .final-content h2 {
+        font-size: 1.85rem;
+    }
+}

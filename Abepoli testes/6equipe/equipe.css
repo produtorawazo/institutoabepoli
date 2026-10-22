@@ -1,0 +1,1176 @@
+
+/* ==========================================================
+   INSTITUTO ABEPOLI
+   Página: Equipe e Apoiadores
+   Identidade: preto, amarelo, creme e natureza
+   ========================================================== */
+
+/* ---------- 1. VARIÁVEIS E BASE ---------- */
+
+:root {
+    --ab-black: #090909;
+    --ab-black-soft: #111111;
+    --ab-black-card: #181818;
+    --ab-yellow: #f6c32f;
+    --ab-yellow-light: #ffd95a;
+    --ab-yellow-dark: #d79e00;
+    --ab-cream: #f7ead3;
+    --ab-cream-light: #fffaf1;
+    --ab-cream-dark: #efe0c5;
+    --ab-text: #17130e;
+    --ab-muted: #665d50;
+    --ab-border: rgba(9, 9, 9, 0.13);
+}
+
+body {
+    margin: 0;
+    background: var(--ab-cream);
+    color: var(--ab-text);
+    font-family: "DM Sans", sans-serif;
+    overflow-x: hidden;
+}
+
+body,
+body * {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body img {
+    max-width: 100%;
+}
+
+body a {
+    color: inherit;
+}
+
+body button {
+    font-family: inherit;
+}
+
+body ::selection {
+    background: var(--ab-yellow);
+    color: var(--ab-black);
+}
+
+/* ---------- 2. CABEÇALHO ---------- */
+
+body .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    background: var(--ab-black);
+    border-bottom: 3px solid var(--ab-yellow);
+}
+
+body .nav-container {
+    width: min(1320px, 92%);
+    min-height: 92px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+body .logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    text-decoration: none;
+}
+
+/* Logo arredondada do cabeçalho */
+body .navbar a.logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 145px;
+    height: 76px;
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 20px;
+    line-height: 0;
+}
+
+body .navbar a.logo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-height: none;
+    object-fit: contain;
+    border-radius: 20px !important;
+}
+
+/* Menu de navegação */
+
+body .nav-menu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 5px;
+}
+
+body .nav-menu a {
+    position: relative;
+    padding: 12px 10px;
+    color: var(--ab-cream-light);
+    font-size: 0.84rem;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 0.25s ease;
+}
+
+body .nav-menu a::after {
+    content: "";
+    position: absolute;
+    right: 10px;
+    bottom: 5px;
+    left: 10px;
+    height: 3px;
+    background: var(--ab-yellow);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease;
+}
+
+body .nav-menu a:hover,
+body .nav-menu a.active {
+    color: var(--ab-yellow);
+}
+
+body .nav-menu a:hover::after,
+body .nav-menu a.active::after {
+    transform: scaleX(1);
+}
+
+body .menu-toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    color: var(--ab-black);
+    background: var(--ab-yellow);
+    border: none;
+    border-radius: 5px;
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+
+/* ---------- 3. HERO / APRESENTAÇÃO ---------- */
+
+body .team-hero {
+    position: relative;
+    isolation: isolate;
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+    align-items: center;
+    gap: 40px;
+    min-height: 590px;
+    padding: 85px max(6%, calc((100% - 1240px) / 2));
+    overflow: hidden;
+    background: var(--ab-cream);
+}
+
+body .team-hero::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -150px;
+    right: -120px;
+    width: 570px;
+    height: 570px;
+    border: 1px solid rgba(9, 9, 9, 0.12);
+    border-radius: 50%;
+}
+
+body .team-hero::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    right: -100px;
+    bottom: -300px;
+    width: 520px;
+    height: 520px;
+    background: var(--ab-yellow);
+    border-radius: 50%;
+}
+
+body .team-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 650px;
+}
+
+body .team-eyebrow,
+body .section-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.73rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+
+body .team-eyebrow {
+    margin-bottom: 26px;
+    color: var(--ab-muted);
+}
+
+body .team-eyebrow i {
+    color: var(--ab-yellow-dark);
+    font-size: 1rem;
+}
+
+body .team-hero h1 {
+    margin: 0 0 26px;
+    color: var(--ab-black);
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: clamp(4rem, 7.2vw, 6.8rem);
+    font-weight: 900;
+    line-height: 0.91;
+    letter-spacing: -1.8px;
+    text-transform: uppercase;
+}
+
+body .team-hero h1 span {
+    color: var(--ab-yellow-dark);
+}
+
+body .team-hero-content > p {
+    max-width: 550px;
+    margin: 0 0 30px;
+    color: var(--ab-muted);
+    font-size: 0.98rem;
+    line-height: 1.9;
+}
+
+body .team-hero-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+    min-height: 53px;
+    padding: 14px 22px;
+    color: var(--ab-yellow);
+    background: var(--ab-black);
+    border: 2px solid var(--ab-black);
+    border-radius: 4px;
+    font-size: 0.87rem;
+    font-weight: 800;
+    text-decoration: none;
+    transition:
+        color 0.25s ease,
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+body .team-hero-button:hover {
+    color: var(--ab-black);
+    background: var(--ab-yellow);
+    border-color: var(--ab-yellow);
+    transform: translateY(-3px);
+}
+
+/* Elementos gráficos do hero */
+
+body .team-hero-decoration {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 360px;
+}
+
+body .hero-circle {
+    position: absolute;
+    width: min(340px, 85%);
+    aspect-ratio: 1;
+    background: var(--ab-yellow);
+    border-radius: 50%;
+}
+
+body .hero-circle::before {
+    content: "";
+    position: absolute;
+    inset: 20px;
+    border: 2px solid rgba(9, 9, 9, 0.2);
+    border-radius: 50%;
+}
+
+body .hero-circle-small {
+    position: absolute;
+    top: 22px;
+    right: 7%;
+    width: 75px;
+    height: 75px;
+    background: var(--ab-black);
+    border: 10px solid var(--ab-cream);
+    border-radius: 50%;
+}
+
+body .hero-leaf {
+    position: relative;
+    z-index: 1;
+    color: var(--ab-black);
+    font-size: clamp(7rem, 12vw, 11rem);
+    transform: rotate(-35deg);
+}
+
+body .hero-decoration-text {
+    position: absolute;
+    right: 0;
+    bottom: 12px;
+    max-width: 270px;
+    padding: 13px 16px;
+    color: var(--ab-yellow);
+    background: var(--ab-black);
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-align: center;
+}
+
+/* ---------- 4. SEÇÃO DA EQUIPE ---------- */
+
+body .team-section {
+    padding: 100px max(6%, calc((100% - 1240px) / 2));
+    color: var(--ab-cream-light);
+    background: var(--ab-black);
+}
+
+body .team-section-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 45px;
+    margin-bottom: 48px;
+}
+
+body .team-section .section-eyebrow {
+    margin-bottom: 15px;
+    color: var(--ab-yellow);
+}
+
+body .team-section-header h2,
+body .supporters-header h2,
+body .team-cta h2 {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: clamp(2.8rem, 5vw, 4.5rem);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.8px;
+}
+
+body .team-section-header h2 {
+    margin: 0;
+    color: var(--ab-cream-light);
+}
+
+body .team-section-header h2 span {
+    color: var(--ab-yellow);
+}
+
+body .team-section-header > p {
+    max-width: 400px;
+    margin: 0;
+    color: #bdb6aa;
+    font-size: 0.94rem;
+    line-height: 1.85;
+}
+
+/* Grade */
+
+body .team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 25px;
+}
+
+/* Card individual */
+
+body .team-card {
+    min-width: 0;
+    overflow: hidden;
+    background: var(--ab-black-card);
+    border: 1px solid #303030;
+    border-radius: 7px;
+    transition:
+        border-color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+body .team-card:hover {
+    border-color: var(--ab-yellow);
+    transform: translateY(-6px);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.28);
+}
+
+body .team-card-image {
+    position: relative;
+    height: 290px;
+    overflow: hidden;
+    background: #292929;
+}
+
+body .team-card-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 35%;
+    transition: transform 0.45s ease;
+}
+
+body .team-card:hover .team-card-image img {
+    transform: scale(1.04);
+}
+
+body .team-card-number {
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    color: var(--ab-black);
+    background: var(--ab-yellow);
+    border: 3px solid var(--ab-black-card);
+    border-radius: 50%;
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 900;
+}
+
+body .team-card-content {
+    padding: 25px 23px 27px;
+}
+
+body .team-role {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: var(--ab-yellow);
+    font-size: 0.66rem;
+    font-weight: 800;
+    letter-spacing: 1.6px;
+}
+
+body .team-card-content h3 {
+    margin: 0 0 9px;
+    color: var(--ab-cream-light);
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 1.7rem;
+    font-weight: 800;
+    line-height: 1.15;
+}
+
+body .team-card-content > p {
+    min-height: 27px;
+    margin: 0 0 22px;
+    color: #bdb6aa;
+    font-size: 0.86rem;
+    line-height: 1.7;
+}
+
+body .team-social {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 10px 14px;
+    color: var(--ab-yellow);
+    border: 1px solid #66551e;
+    border-radius: 4px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition:
+        color 0.25s ease,
+        background 0.25s ease;
+}
+
+body .team-social:hover {
+    color: var(--ab-black);
+    background: var(--ab-yellow);
+}
+
+/* ---------- 5. SEÇÃO DE APOIADORES ---------- */
+
+body .supporters-section {
+    padding: 100px max(6%, calc((100% - 1240px) / 2));
+    background: var(--ab-cream);
+}
+
+body .supporters-header {
+    max-width: 720px;
+    margin: 0 auto 48px;
+    text-align: center;
+}
+
+body .supporters-header .section-eyebrow {
+    justify-content: center;
+    margin-bottom: 15px;
+    color: var(--ab-yellow-dark);
+}
+
+body .supporters-header h2 {
+    margin: 0 0 20px;
+    color: var(--ab-black);
+}
+
+body .supporters-header h2 span {
+    color: var(--ab-yellow-dark);
+}
+
+body .supporters-header > p {
+    max-width: 580px;
+    margin: 0 auto;
+    color: var(--ab-muted);
+    font-size: 0.96rem;
+    line-height: 1.85;
+}
+
+body .supporters-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 760px);
+    justify-content: center;
+    gap: 25px;
+}
+
+body .supporter-card {
+    display: grid;
+    grid-template-columns: 38% minmax(0, 1fr);
+    min-width: 0;
+    overflow: hidden;
+    background: var(--ab-cream-light);
+    border: 1px solid #e1d2b8;
+    border-radius: 7px;
+    box-shadow: 0 12px 30px rgba(9, 9, 9, 0.07);
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+body .supporter-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 35px rgba(9, 9, 9, 0.12);
+}
+
+body .supporter-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 250px;
+    padding: 25px;
+    background: var(--ab-yellow);
+}
+
+body .supporter-image img {
+    display: block;
+    width: 100%;
+    max-height: 200px;
+    object-fit: contain;
+}
+
+body .supporter-content {
+    align-self: center;
+    padding: 30px;
+}
+
+body .supporter-label {
+    display: block;
+    margin-bottom: 12px;
+    color: var(--ab-yellow-dark);
+    font-size: 0.67rem;
+    font-weight: 800;
+    letter-spacing: 1.4px;
+}
+
+body .supporter-content h3 {
+    margin: 0 0 8px;
+    color: var(--ab-black);
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 2.2rem;
+    font-weight: 900;
+}
+
+body .supporter-content > p {
+    margin: 0 0 22px;
+    color: var(--ab-muted);
+    font-size: 0.9rem;
+    line-height: 1.75;
+}
+
+body .supporter-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding-bottom: 5px;
+    color: var(--ab-black);
+    border-bottom: 2px solid var(--ab-yellow);
+    font-size: 0.84rem;
+    font-weight: 800;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+body .supporter-link:hover {
+    color: var(--ab-yellow-dark);
+}
+
+/* ---------- 6. CHAMADA FINAL ---------- */
+
+body .team-cta {
+    position: relative;
+    isolation: isolate;
+    padding: 95px 7%;
+    overflow: hidden;
+    background: var(--ab-yellow);
+    color: var(--ab-black);
+}
+
+body .team-cta::before,
+body .team-cta::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -160px;
+    right: -80px;
+    border: 2px solid rgba(9, 9, 9, 0.12);
+    border-radius: 50%;
+}
+
+body .team-cta::before {
+    width: 440px;
+    height: 440px;
+}
+
+body .team-cta::after {
+    top: -85px;
+    right: -5px;
+    width: 290px;
+    height: 290px;
+}
+
+body .team-cta-content {
+    width: min(900px, 100%);
+    margin: 0 auto;
+    text-align: center;
+}
+
+body .team-cta .section-eyebrow {
+    justify-content: center;
+    margin-bottom: 20px;
+    color: #51400f;
+}
+
+body .team-cta h2 {
+    margin: 0 0 22px;
+    color: var(--ab-black);
+    font-size: clamp(3.1rem, 6vw, 5.2rem);
+}
+
+body .team-cta h2 span {
+    text-decoration: underline;
+    text-decoration-thickness: 4px;
+    text-underline-offset: 7px;
+}
+
+body .team-cta-content > p {
+    max-width: 620px;
+    margin: 0 auto 30px;
+    color: #443713;
+    font-size: 0.96rem;
+    line-height: 1.85;
+}
+
+body .team-cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    min-height: 53px;
+    padding: 14px 24px;
+    color: var(--ab-yellow);
+    background: var(--ab-black);
+    border: 2px solid var(--ab-black);
+    border-radius: 4px;
+    font-size: 0.87rem;
+    font-weight: 800;
+    text-decoration: none;
+    transition:
+        color 0.25s ease,
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+body .team-cta-button:hover {
+    color: var(--ab-black);
+    background: transparent;
+    transform: translateY(-3px);
+}
+
+/* ---------- 7. RODAPÉ ---------- */
+
+body .footer {
+    color: var(--ab-cream-light);
+    background: var(--ab-black);
+}
+
+body .footer-container {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr 1fr;
+    gap: 55px;
+    width: min(1240px, 88%);
+    margin: 0 auto;
+    padding: 70px 0 55px;
+}
+
+body .footer-brand {
+    max-width: 360px;
+}
+
+body .footer-logo {
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+body .footer-logo img {
+    display: block;
+    width: 170px;
+    max-height: 100px;
+    object-fit: contain;
+}
+
+body .footer-brand > p {
+    max-width: 320px;
+    margin: 0;
+    color: #b8b2a8;
+    font-size: 0.89rem;
+    line-height: 1.9;
+}
+
+body .footer-links,
+body .footer-social {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 13px;
+    min-width: 0;
+}
+
+body .footer-links h3,
+body .footer-social h3 {
+    position: relative;
+    margin: 0 0 12px;
+    padding-bottom: 12px;
+    color: var(--ab-yellow);
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+body .footer-links h3::after,
+body .footer-social h3::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 38px;
+    height: 3px;
+    background: var(--ab-yellow);
+}
+
+body .footer-links a,
+body .footer-social a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #c7c1b7;
+    font-size: 0.86rem;
+    line-height: 1.6;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+    transition: color 0.2s ease;
+}
+
+body .footer-links a:hover,
+body .footer-social a:hover {
+    color: var(--ab-yellow);
+}
+
+body .footer-social a i {
+    width: 18px;
+    flex-shrink: 0;
+    color: var(--ab-yellow);
+    text-align: center;
+}
+
+body .footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    width: min(1240px, 88%);
+    margin: 0 auto;
+    padding: 22px 0;
+    border-top: 1px solid #303030;
+}
+
+body .footer-bottom p {
+    margin: 0;
+    color: #99938a;
+    font-size: 0.77rem;
+    line-height: 1.7;
+}
+
+body .footer-credit i {
+    margin: 0 3px;
+    color: var(--ab-yellow);
+}
+
+/* ---------- 8. TABLETS ---------- */
+
+@media (max-width: 1050px) {
+    body .nav-container {
+        width: 94%;
+        gap: 15px;
+    }
+
+    body .navbar a.logo {
+        width: 120px;
+        height: 70px;
+    }
+
+    body .nav-menu {
+        gap: 0;
+    }
+
+    body .nav-menu a {
+        padding: 11px 7px;
+        font-size: 0.76rem;
+    }
+
+    body .nav-menu a::after {
+        right: 7px;
+        left: 7px;
+    }
+
+    body .team-hero {
+        padding-right: 5%;
+        padding-left: 5%;
+        gap: 20px;
+    }
+
+    body .team-section,
+    body .supporters-section {
+        padding-right: 5%;
+        padding-left: 5%;
+    }
+
+    body .team-grid {
+        gap: 18px;
+    }
+
+    body .team-card-image {
+        height: 250px;
+    }
+
+    body .footer-container {
+        gap: 30px;
+    }
+}
+
+/* ---------- 9. MENU E LAYOUT MOBILE ---------- */
+
+@media (max-width: 800px) {
+    body .nav-container {
+        min-height: 80px;
+    }
+
+    body .navbar a.logo {
+        width: 125px;
+        height: 66px;
+    }
+
+    body .menu-toggle {
+        display: inline-flex;
+        flex-shrink: 0;
+    }
+
+    body .nav-menu {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 10px 5% 20px;
+        background: var(--ab-black);
+        border-top: 1px solid #303030;
+        box-shadow: 0 14px 25px rgba(0, 0, 0, 0.22);
+        visibility: hidden;
+        opacity: 0;
+        transform: translateY(-8px);
+        pointer-events: none;
+        transition:
+            opacity 0.25s ease,
+            transform 0.25s ease,
+            visibility 0.25s ease;
+    }
+
+    body .nav-menu.active {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+
+    body .nav-menu a {
+        width: 100%;
+        padding: 14px 10px;
+        font-size: 0.92rem;
+        border-bottom: 1px solid #292929;
+        white-space: normal;
+    }
+
+    body .nav-menu a::after {
+        display: none;
+    }
+
+    body .team-hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        padding: 70px 7% 45px;
+    }
+
+    body .team-hero h1 {
+        font-size: clamp(3.8rem, 12vw, 5.8rem);
+    }
+
+    body .team-hero-decoration {
+        min-height: 300px;
+    }
+
+    body .hero-circle {
+        width: 265px;
+    }
+
+    body .hero-leaf {
+        font-size: 8rem;
+    }
+
+    body .team-section,
+    body .supporters-section {
+        padding: 75px 6%;
+    }
+
+    body .team-section-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 18px;
+        margin-bottom: 35px;
+    }
+
+    body .team-section-header > p {
+        max-width: 600px;
+    }
+
+    body .team-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    body .team-card-image {
+        height: 235px;
+    }
+
+    body .team-card-content {
+        padding: 21px 18px 23px;
+    }
+
+    body .supporters-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    body .team-cta {
+        padding: 75px 6%;
+    }
+
+    body .footer-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 38px 28px;
+        width: 88%;
+        padding: 55px 0 40px;
+    }
+
+    body .footer-brand {
+        grid-column: 1 / -1;
+    }
+
+    body .footer-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+        width: 88%;
+    }
+}
+
+/* ---------- 10. CELULARES ---------- */
+
+@media (max-width: 520px) {
+    body .team-hero {
+        padding: 55px 6% 35px;
+    }
+
+    body .team-eyebrow,
+    body .section-eyebrow {
+        font-size: 0.66rem;
+        letter-spacing: 1.5px;
+    }
+
+    body .team-hero h1 {
+        font-size: clamp(3.2rem, 14vw, 4.5rem);
+        letter-spacing: -1px;
+    }
+
+    body .team-hero-content > p {
+        font-size: 0.92rem;
+    }
+
+    body .team-hero-decoration {
+        min-height: 240px;
+    }
+
+    body .hero-circle {
+        width: 215px;
+    }
+
+    body .hero-circle::before {
+        inset: 14px;
+    }
+
+    body .hero-circle-small {
+        top: 10px;
+        right: 7%;
+        width: 55px;
+        height: 55px;
+        border-width: 8px;
+    }
+
+    body .hero-leaf {
+        font-size: 6.5rem;
+    }
+
+    body .hero-decoration-text {
+        right: 0;
+        bottom: 0;
+        max-width: 235px;
+        font-size: 0.56rem;
+    }
+
+    body .team-section,
+    body .supporters-section {
+        padding: 60px 6%;
+    }
+
+    body .team-section-header h2,
+    body .supporters-header h2 {
+        font-size: 3rem;
+    }
+
+    body .team-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 23px;
+        max-width: 380px;
+        margin: 0 auto;
+    }
+
+    body .team-card-image {
+        height: 300px;
+    }
+
+    body .team-card-content {
+        padding: 24px;
+    }
+
+    body .supporters-header {
+        margin-bottom: 32px;
+    }
+
+    body .supporter-card {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    body .supporter-image {
+        min-height: 190px;
+    }
+
+    body .supporter-image img {
+        max-height: 150px;
+    }
+
+    body .supporter-content {
+        padding: 24px;
+    }
+
+    body .team-cta {
+        padding: 60px 6%;
+    }
+
+    body .team-cta h2 {
+        font-size: 3.1rem;
+    }
+
+    body .team-cta-content > p {
+        font-size: 0.91rem;
+    }
+
+    body .footer-container {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 32px;
+        width: 88%;
+    }
+
+    body .footer-brand {
+        grid-column: auto;
+    }
+
+    body .footer-bottom {
+        width: 88%;
+    }
+}
+
+/* ---------- 11. ACESSIBILIDADE ---------- */
+
+body a:focus-visible,
+body button:focus-visible {
+    outline: 3px solid var(--ab-yellow-dark);
+    outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    body *,
+    body *::before,
+    body *::after {
+        transition-duration: 0.01ms !important;
+    }
+}

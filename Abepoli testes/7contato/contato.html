@@ -1,0 +1,365 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Instituto Abepoli - Abelhas Polinizadoras Sem Ferrão</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="../7contato/contato.css">
+</head>
+
+<body>
+
+    <!-- CABEÇALHO OFICIAL -->
+    <header class="navbar">
+        <div class="container nav-container">
+
+            <a href="../1index/index.html" class="logo">
+                <img
+                    src="../images/logoabepoli.png"
+                    alt="Logo Instituto Abepoli"
+                    class="logo-icon">
+
+                <div class="logo-text">
+                    <span class="logo-title">INSTITUTO ABEPOLI</span>
+                    <span class="logo-subtitle">ABELHAS POLINIZADORAS SEM FERRÃO</span>
+                </div>
+            </a>
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Abrir menu"
+                aria-expanded="false">
+
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <nav class="nav-menu" id="navMenu">
+                 <a
+                    href="../1index/index.html"
+                    class="nav-link">
+
+                    Início
+
+                </a>
+
+
+                <a
+                    href="../2produtos/produtos.html"
+                    class="nav-link">
+
+                    Produtos
+
+                </a>
+
+
+                <a
+                    href="../3ações/ações.html"
+                    class="nav-link">
+
+                    Ações
+
+                </a>
+
+<a
+                    href="../8projetos/projeto.html"
+                    class="nav-link">
+
+                    Projetos
+
+                </a>
+
+                <a
+                    href="../4doações/doações.html"
+                    class="nav-link">
+
+                    Doações
+
+                </a>
+
+
+                <a
+                    href="../5saibamais/saiba-mais.html"
+                    class="nav-link">
+
+                    Saiba Mais
+
+                </a>
+
+
+                <a
+                    href="../1index/index.html#equipe"
+                    class="nav-link">
+
+                    Equipe
+
+                </a>
+
+
+                <a
+                    href="../7contato/contato.html"
+                    class="nav-link">
+
+                    Contato
+
+                </a>
+
+            </nav>
+
+        </div>
+    </header>
+
+    <main>
+        <section class="contact-section">
+            <div class="container">
+                <div class="contact-grid">
+
+                    <!-- ÁREA DO FORMULÁRIO -->
+                    <div class="contact-form-area">
+
+                        <span class="section-label">
+                            Está com alguma dúvida?
+                        </span>
+
+                        <h1>
+                            Abepoli está pronta para ajudar
+                        </h1>
+
+                        <form
+                            class="contact-form"
+                            id="contactForm"
+                            action="https://formspree.io/f/mnpjnojy"
+                            method="POST">
+
+                            <!-- NOME -->
+                            <div class="form-group">
+                                <label for="nome">Nome:</label>
+
+                                <input
+                                    type="text"
+                                    id="nome"
+                                    name="nome"
+                                    placeholder="Digite seu nome"
+                                    autocomplete="name"
+                                    required>
+                            </div>
+
+                            <!-- EMAIL -->
+                            <div class="form-group">
+                                <label for="email">Email:</label>
+
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    placeholder="Digite seu email"
+                                    autocomplete="email"
+                                    required>
+                            </div>
+
+                            <!-- MENSAGEM -->
+                            <div class="form-group">
+                                <label for="comentario">Comentário:</label>
+
+                                <textarea
+                                    id="comentario"
+                                    name="mensagem"
+                                    placeholder="Digite seu comentário"
+                                    rows="6"
+                                    required></textarea>
+                            </div>
+
+                            <!-- ASSUNTO DO EMAIL -->
+                            <input
+                                type="hidden"
+                                name="_subject"
+                                value="Novo contato pelo site Instituto Abepoli">
+
+                            <!-- BOTÃO ENVIAR -->
+                            <button type="submit" class="btn-submit">
+                                Enviar
+                            </button>
+
+                            <!-- MENSAGEM DE STATUS -->
+                            <p
+                                id="formStatus"
+                                class="form-status"
+                                aria-live="polite"></p>
+
+                        </form>
+                    </div>
+
+                    <!-- IMAGEM -->
+                    <div class="contact-image-area">
+                        <div class="image-frame">
+                            <img
+                                src="../images/abelha3.jpg"
+                                alt="Abelha do Instituto Abepoli">
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- INFORMAÇÕES DE CONTATO -->
+                <div class="contact-info">
+
+                    <p class="contact-intro">
+                        Se preferir entre em
+                        <span>contato</span>:
+                    </p>
+
+                    <div class="contact-buttons">
+
+                        <!-- WHATSAPP -->
+                        <a
+                            href="https://wa.me/5512988176722"
+                            target="_blank"
+                            rel="noopener"
+                            class="contact-button">
+
+                            <i class="fa-brands fa-whatsapp"></i>
+
+                            <span>(12) 98817-6722</span>
+                        </a>
+
+                        <!-- EMAIL -->
+                        <a
+                            href="mailto:abepoli@gmail.com"
+                            class="contact-button">
+
+                            <i class="fa-regular fa-envelope"></i>
+
+                            <span>abepoli@gmail.com</span>
+                        </a>
+
+                    </div>
+
+                    <p class="address">
+                        Rua Gilberto Menotti Eugênio Cará, 88 -
+                        Palmeiras de São José,
+                        São José dos Campos - SP
+                    </p>
+
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer class="footer">
+        <div class="container footer-content">
+
+            <div class="footer-container">
+
+                <!-- LOGO -->
+                <div class="footer-col-logo">
+                    <a
+                        href="../1index/index.html"
+                        class="logo logo-footer">
+
+                        <img
+                            src="../images/logoabepoli.png"
+                            alt="Logo Instituto Abepoli"
+                            class="logo-icon">
+
+                        <div class="logo-text">
+                            <span class="logo-title">INSTITUTO ABEPOLI</span>
+                            <span class="logo-subtitle">ABELHAS POLINIZADORAS SEM FERRÃO</span>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- CONTATO -->
+                <div class="footer-column">
+
+                    <h3 class="footer-title">Contato</h3>
+
+                    <ul class="footer-links">
+
+                        <li>
+                            <a href="mailto:abepoli@gmail.com">
+                                <i class="fa-solid fa-envelope"></i>
+                                abepoli@gmail.com
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <i class="fa-brands fa-facebook-f"></i>
+                                Instituto Abepoli
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <i class="fa-brands fa-instagram"></i>
+                                @abepoli
+                            </a>
+                        </li>
+
+                        <li>
+                            <a
+                                href="https://wa.me/5512988176722"
+                                target="_blank"
+                                rel="noopener">
+
+                                <i class="fa-brands fa-whatsapp"></i>
+                                (12) 98817-6722
+                            </a>
+                        </li>
+
+                    </ul>
+
+                    <a href="#" class="login-link">
+                        Realizar login
+                    </a>
+
+                </div>
+
+                <!-- EQUIPE -->
+                <div class="footer-column">
+
+                    <h3 class="footer-title">Site desenvolvido por</h3>
+
+                    <ul class="footer-team">
+                        <li>Arthur Volpi</li>
+                        <li>Nathaly Marrote</li>
+                        <li>Maytê</li>
+                        <li>Murillo Santos</li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+            <!-- COPYRIGHT -->
+            <div class="footer-bottom">
+                <p>
+                    © 2026 Instituto Abepoli.
+                    Todos os direitos reservados.
+                </p>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="./contato.js"></script>
+
+</body>
+</html>
